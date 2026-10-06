@@ -1,0 +1,10 @@
+# build artifacts
+dist/
+dist_old*/
+build*/
+release/
+# python
+__pycache__/
+*.pyc
+# local secrets / transient
+*.log

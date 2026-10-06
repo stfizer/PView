@@ -1,0 +1,77 @@
+[AUDIT] QShortcut objects: 76, unique keys: 76
+PASS no duplicate shortcuts
+PASS no empty bindings
+PASS shortcuts enabled
+PASS all 76 expected keys bound
+  ok Right
+  ok Down
+  ok Left
+  ok Up
+  ok Space
+  ok PgDown
+  ok PgUp
+  ok Home
+  ok End
+  ok Ctrl+PgDown
+  ok Ctrl+PgUp
+  ok Ctrl+Alt+PgDown
+  ok ]
+  ok [
+  ok +
+  ok =
+  ok -
+  ok 0
+  ok 9
+  ok 8
+  ok 7
+  ok 6
+  ok 5
+  ok Z
+  ok Alt+Right
+  ok Alt+Left
+  ok Alt+Down
+  ok Alt+Up
+  ok Ctrl+M
+  ok Ctrl+F
+  ok Ctrl+I
+  ok Ctrl+Y
+  ok Ctrl+Shift+S
+  ok Ctrl+G
+  ok U
+  ok I
+  ok S
+  ok Alt+T
+  ok F8
+  ok Ctrl+1
+  ok Ctrl+2
+  ok Ctrl+3
+  ok Ctrl+4
+  ok Ctrl+5
+  ok Ctrl+6
+  ok Ctrl+7
+  ok Ctrl+8
+  ok Ctrl+9
+  ok F11
+  ok Alt+Return
+  ok F
+  ok Return
+  ok Tab
+  ok Shift+Tab
+  ok B
+  ok Ctrl+C
+  ok Ctrl+V
+  ok Ctrl+T
+  ok Ctrl+S
+  ok Ctrl+E
+  ok Ctrl+A
+  ok Ctrl+Return
+  ok F5
+  ok F1
+  ok F4
+  ok Ctrl+W
+  ok Ctrl+O
+  ok Ctrl+N
+  ok Esc
+  ok Ctrl+Shift+G
+PASS dynamic dispatch verified for all safe shortcuts
+ALL OK
