@@ -4,8 +4,9 @@ from __future__ import annotations
 import os
 
 from PySide6.QtCore import Qt, QThread, Signal
+from PySide6.QtGui import QKeySequence
 from PySide6.QtWidgets import (QCheckBox, QComboBox, QDialog, QFileDialog,
-                               QFormLayout, QFrame, QGridLayout, QHBoxLayout,
+                               QFormLayout, QFrame, QHBoxLayout,
                                QLabel, QLineEdit, QListWidget, QMessageBox,
                                QProgressBar, QPushButton, QRadioButton,
                                QSlider, QSpinBox, QStackedWidget, QTableWidget,
@@ -1266,8 +1267,8 @@ class ConvertDialog(QDialog):
 
     def _fmt_for(self, entry) -> tuple[str | None, str]:
         """returns (pil_format or None, ext)"""
-        sel = self.fmt.currentData()
         ext = os.path.splitext(entry.name)[1].lower()
+        sel = self.fmt.currentData()
         if sel in (None, 0, "keep"):
             m = {".jpg": "JPEG", ".jpeg": "JPEG", ".jfif": "JPEG",
                  ".png": "PNG", ".apng": "PNG", ".webp": "WEBP", ".bmp": "BMP",
@@ -1318,7 +1319,6 @@ class ConvertDialog(QDialog):
         resize = (self.rw.value(), self.rh.value())
         rot = self.rot.currentData()
         prefix = self.prefix.text()
-        sel = self.fmt.currentData()
         jobs = []
         for e in self._entries:
             fmt, ext = self._fmt_for(e)
@@ -1329,7 +1329,6 @@ class ConvertDialog(QDialog):
             if os.path.normpath(out) == os.path.normpath(
                     e.key if not self._source.archive else ""):
                 continue
-            src_path = e.key if not self._source.archive else None
             entry = e
             jobs.append((self._make_loader(entry), out,
                          {"pil_format": fmt, "quality": quality,

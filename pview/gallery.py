@@ -127,7 +127,7 @@ class FilmStrip(QFrame):
             self._scroll.ensureWidgetVisible(self._cells[index], 60, 0)
 
     def retint(self, p: dict):
-        self.setStyleSheet(f"""
+        self.setStyleSheet("""
             QFrame#FilmStrip {{
                 background: rgba(28,28,28,0.86);
                 border: 1px solid rgba(255,255,255,0.08);

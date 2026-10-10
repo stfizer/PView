@@ -8,10 +8,10 @@ from collections import OrderedDict
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
-from PySide6.QtCore import QBuffer, QIODevice, QObject, QSize, Qt, Signal
-from PySide6.QtGui import QGuiApplication, QImage, QPixmap
+from PySide6.QtCore import QBuffer, QIODevice, QObject, QSize, Signal
+from PySide6.QtGui import QImage, QPixmap
 
-from .archive import Entry, ImageSource, ext_of
+from .archive import Entry, ImageSource
 
 # ---------------- optional codecs ----------------
 

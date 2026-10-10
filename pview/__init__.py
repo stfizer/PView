@@ -3,7 +3,6 @@
 import logging
 import logging.handlers
 import os
-import sys
 
 APP_NAME = "P view"
 APP_VERSION = "1.0.0"

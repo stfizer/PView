@@ -13,13 +13,12 @@ def _main():
     if base not in sys.path:
         sys.path.insert(0, base)
 
-    from PySide6.QtCore import QStandardPaths  # ensure plugin env ok
+    from PySide6.QtCore import QStandardPaths  # noqa: F401  (plugin env)
     from PySide6.QtWidgets import QApplication
 
     from pview import APP_NAME, ORG_NAME
     from pview import icons, settings as S
     from pview.i18n import set_language
-    from pview.theme import build_qss, palette
     from pview.widgets import Toast  # noqa: F401
 
     args = [a for a in sys.argv[1:] if not a.startswith("-")]

@@ -78,7 +78,6 @@ _ZH = {
     "assoc_g_modern": "现代图像格式", "assoc_g_raw": "RAW",
     "assoc_g_comic": "漫画压缩包", "assoc_g_other": "其他",
     "zoom_100": "缩放至 100%", "zoom_reset": "重置缩放", "zoom_lock": "锁定缩放比例",
-    "open_folder": "打开所在文件夹",
     "zoom_lock_on": "锁定缩放比例: 开", "zoom_lock_off": "锁定缩放比例: 关",
     "fit_best": "适应窗口", "fit_toggle_100": "在 100% 与适应窗口间切换",
     # ---- rotate / flip / effects ----
@@ -279,7 +278,6 @@ _EN = {
     "assoc_g_modern": "Modern image formats", "assoc_g_raw": "RAW",
     "assoc_g_comic": "Comic archives", "assoc_g_other": "Other",
     "zoom_100": "Zoom 100%", "zoom_reset": "Reset Zoom", "zoom_lock": "Fix Zoom Level",
-    "open_folder": "Open Containing Folder",
     "zoom_lock_on": "Fix Zoom Level: On", "zoom_lock_off": "Fix Zoom Level: Off",
     "fit_best": "Fit in Window", "fit_toggle_100": "Toggle 100% / Fit",
     "rotate": "Rotate", "rotate_l": "Rotate 90° Counter-Clockwise", "rotate_r": "Rotate 90° Clockwise",

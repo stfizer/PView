@@ -9,9 +9,9 @@ import shutil
 import subprocess
 import sys
 
-from PySide6.QtCore import QEvent, QPoint, QSize, Qt, QTimer, QUrl, Signal
-from PySide6.QtGui import (QAction, QCursor, QDesktopServices, QGuiApplication,
-                           QFont, QImage, QKeySequence, QPainter, QPixmap,
+from PySide6.QtCore import QEvent, QSize, Qt, QTimer, QUrl, Signal
+from PySide6.QtGui import (QAction, QCursor, QDesktopServices, QFont,
+                           QImage, QKeySequence, QPainter, QPixmap,
                            QShortcut, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QFileDialog, QFrame,
                                QHBoxLayout, QInputDialog, QLabel, QMenu,

@@ -1,13 +1,12 @@
 """Right-side sliding info panel: file info + EXIF key metadata."""
 from __future__ import annotations
 
-from PySide6.QtCore import (QEasingCurve, QPropertyAnimation, Qt, QTimer,
-                            Signal)
+from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import (QFrame, QGridLayout, QHBoxLayout, QLabel,
                                QScrollArea, QToolButton, QVBoxLayout, QWidget)
 
 from .i18n import tr
-from .loader import ExifInfo, human_size
+from .loader import human_size
 from .widgets import IconButton
 
 import os
@@ -175,7 +174,7 @@ class InfoPanel(QFrame):
         # near-opaque so the panel reads as ONE uniform surface: lower values
         # let bright image areas bleed through and look like a solid lighter
         # block inside the panel (user-visible inconsistency)
-        self.setStyleSheet(f"""
+        self.setStyleSheet("""
             QFrame#InfoPanel {{
                 background: rgba(24,24,24,0.97);
                 border: 1px solid rgba(255,255,255,0.08);

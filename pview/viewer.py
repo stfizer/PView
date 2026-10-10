@@ -6,7 +6,7 @@ import math
 import threading
 from collections import OrderedDict
 
-from PySide6.QtCore import (QEasingCurve, QPoint, QPointF, QRectF, QSize, Qt,
+from PySide6.QtCore import (QEasingCurve, QPointF, QRectF, QSize, Qt,
                             QThread, QTimer, QVariantAnimation, Signal)
 from PySide6.QtGui import QColor, QImage, QPainter, QPen, QPixmap, QTransform
 from PySide6.QtWidgets import QWidget
@@ -33,7 +33,7 @@ def _gamma_lut(g: float):
 
 def apply_effects(img, fx: dict):
     """fx: gray, sepia, invert, gamma, brightness, contrast, saturation, channel."""
-    from PIL import ImageChops, ImageEnhance, ImageOps
+    from PIL import Image, ImageChops, ImageEnhance, ImageOps
     if img.mode != "RGBA":
         img = img.convert("RGBA")
     if fx.get("gray"):
@@ -727,7 +727,6 @@ class ImageViewCanvas(QWidget):
             self.set_zoom(new_pct / 100.0, e.position())
             e.accept()
             return
-        cs = self._content_size()
         can_v = self._zoomed_h() > self.height() + 1
         can_h = self._zoomed_w() > self.width() + 1
         if can_v or can_h:
@@ -780,16 +779,6 @@ class ImageViewCanvas(QWidget):
                 return
         e.ignore()
 
-    def mouseDoubleClickEvent(self, e):
-        if (S.get("dbl_click_max")
-                and e.button() == Qt.MouseButton.LeftButton):
-            w = self.window()
-            if hasattr(w, "_toggle_max"):
-                w._toggle_max()
-            e.accept()
-            return
-        e.ignore()
-
     def mouseMoveEvent(self, e):
         if self._panning and self._drag_start is not None:
             d = e.position() - self._drag_start
@@ -811,8 +800,15 @@ class ImageViewCanvas(QWidget):
         e.ignore()
 
     def mouseDoubleClickEvent(self, e):
+        # merged: double-click maximizes (BandiView default) when enabled,
+        # otherwise toggles fit/100% zoom
         if e.button() == Qt.MouseButton.LeftButton:
-            self.toggle_zoom_fit_100()
+            if S.get("dbl_click_max"):
+                w = self.window()
+                if hasattr(w, "_toggle_max"):
+                    w._toggle_max()
+            else:
+                self.toggle_zoom_fit_100()
             e.accept()
             return
         e.ignore()

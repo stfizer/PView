@@ -6,7 +6,7 @@ import os
 import re
 import tarfile
 import zipfile
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from . import settings as S
 
